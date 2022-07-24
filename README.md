@@ -1,2 +1,2 @@
 # Nyfra 
-Multi-functional bot | Administration, moderation, fun..
+Testing bot
