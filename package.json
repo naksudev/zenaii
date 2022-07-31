@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@discordjs/rest": "^1.0.0",
+    "ascii-table": "^0.0.9",
+    "chalk": "^2.4.2",
+    "discord.js": "^14.1.1",
+    "dotenv": "^16.0.1",
+    "glob": "7.2.0",
+    "util": "^0.12.4"
+  },
+  "name": "nyfra",
+  "description": "Testing bot",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "run": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naksudev/nyfra.git"
+  },
+  "author": "Naksu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naksudev/nyfra/issues"
+  },
+  "homepage": "https://github.com/naksudev/nyfra#readme"
+}
