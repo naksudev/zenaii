@@ -14,10 +14,9 @@ const client = new Client({
 require('dotenv').config();
 
 client.commands = new Collection();
-client.slashCommands = new Collection();
 
 module.exports = client;
 
-['prefixCommands', 'slashCommands', 'events'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
+['commands', 'events'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
 
 client.login(process.env.DISCORD_TOKEN);

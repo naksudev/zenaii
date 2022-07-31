@@ -4,7 +4,7 @@ module.exports = {
 
     async execute(client, interaction) {
         if (interaction.isCommand()) {
-            const cmd = client.slashCommands.get(interaction.commandName);
+            const cmd = client.commands.get(interaction.commandName);
             
             if (!cmd) return interaction.reply('Cette commande n\'existe pas.');
 

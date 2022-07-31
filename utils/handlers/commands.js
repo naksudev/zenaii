@@ -7,10 +7,10 @@ const pGlob = promisify(glob);
 const chalk = require('chalk');
 var AsciiTable = require('ascii-table');
 var table = new AsciiTable();
-table.setHeading('Slash Commands', 'Status').setBorder('|', '-', "+", "+");
+table.setHeading('Prefix Commands', 'Status').setBorder('|', '-', "+", "+");
 
 module.exports = async (client) => {
-    (await pGlob(`${process.cwd()}/commands/prefixCommands/**/*.js`)).map(async (cmdFile) => {
+    (await pGlob(`${process.cwd()}/commands/**/*.js`)).map(async (cmdFile) => {
         const cmd = require(cmdFile);
 
         if (cmd.name) {
@@ -20,6 +20,6 @@ module.exports = async (client) => {
             table.addRow(cmd.name, '⛔');
         }
     })
-
-    console.log(chalk.yellow(table.toString()));
+    
+    console.log(chalk.blue(table.toString()));
 }
