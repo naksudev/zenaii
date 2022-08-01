@@ -3,6 +3,7 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = {
     name: "ping",
     description: 'Pong!',
+    ownerOnly: false,
 
     run: async (client, interaction) => {
         await interaction.reply('Pong!');
@@ -12,6 +13,6 @@ module.exports = {
             .setColor("#FFFFFF")
             .setDescription(`Time : ${msg.createdTimestamp - interaction.createdTimestamp}ms \nAPI Ping : ${client.ws.ping}ms`)
         
-        interaction.editReply({ embeds: [embed] })
+        interaction.editReply({ embeds: [embed], content: '' })
     }
 };

@@ -10,13 +10,24 @@ const client = new Client({
 	], 
 	partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember, Partials.Reaction] 
 });
+const config = require('./config');
+client.config = config;
 
-require('dotenv').config();
-
+// Commands & Events
 client.commands = new Collection();
-
-module.exports = client;
 
 ['commands', 'events'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
 
-client.login(process.env.DISCORD_TOKEN);
+process.on('unhandledRejection', (reason, p) => {
+    console.log(reason, p);
+});
+
+process.on('uncaughtException', (err, origin) => {
+    console.log(err, origin);
+});
+
+process.on('uncaughtExceptionMonitor', (err, origin) => {
+    console.log(err, origin);
+});
+
+client.login(config.token);

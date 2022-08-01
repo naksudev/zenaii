@@ -7,7 +7,7 @@ const pGlob = promisify(glob);
 const chalk = require('chalk');
 var AsciiTable = require('ascii-table');
 var table = new AsciiTable();
-table.setHeading('Prefix Commands', 'Status').setBorder('|', '-', "+", "+");
+table.setHeading('Commands', 'Status').setBorder('|', '-', "+", "+");
 
 module.exports = async (client) => {
     (await pGlob(`${process.cwd()}/commands/**/*.js`)).map(async (cmdFile) => {

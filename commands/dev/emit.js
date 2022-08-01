@@ -1,6 +1,7 @@
 module.exports = {
     name: "emit",
-    description: 'Emettre un événement.',
+    description: 'Emit a event.',
+    ownerOnly: true,
 
     options: [
         {
@@ -27,12 +28,11 @@ module.exports = {
         switch (evtChoices) {
             case 'guildMemberAdd':
                 client.emit('guildMemberAdd', interaction.member);
-                interaction.reply("Check the console !");
+                interaction.reply({ content: "Event emitted, check the console.", ephemeral: true });
                 break;
-        
             case 'guildMemberRemove':
                 client.emit('guildMemberRemove', interaction.member);
-                interaction.reply("Check the console !");
+                interaction.reply({ content: "Event emitted, check the console.", ephemeral: true });
                 break;
             default:
                 break;
