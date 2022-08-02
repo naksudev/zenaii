@@ -3,7 +3,7 @@
     "@discordjs/rest": "^1.0.1",
     "ascii-table": "^0.0.9",
     "chalk": "^2.4.2",
-    "discord.js": "^14.1.1",
+    "discord.js": "^14.1.2",
     "dotenv": "^16.0.1",
     "glob": "7.2.0",
     "util": "^0.12.4"
@@ -13,7 +13,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "run": "node ."
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,5 @@
   "bugs": {
     "url": "https://github.com/naksudev/zenaii/issues"
   },
-  "homepage": "https://github.com/naksudev/zenaii#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/naksudev/zenaii#readme"
 }

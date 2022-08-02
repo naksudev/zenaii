@@ -3,7 +3,7 @@ module.exports = {
     once: false,
 
     async execute(client, interaction) {
-        if (interaction.isCommand()) {
+        if (interaction.isCommand() || interaction.isContextMenuCommand()) {
             const cmd = client.commands.get(interaction.commandName);
             
             if (!cmd) return client.commands.delete(interaction.commandName);
@@ -12,6 +12,14 @@ module.exports = {
                 return interaction.reply({ content: "You are not authorized to use this command !", ephemeral: true }); 
 
             cmd.run(client, interaction);
+        }
+
+        if (interaction.isButton()) {
+            const btn = client.buttons.get(interaction.customId);
+
+            if (!btn) return client.buttons.delete(interaction.customId); 
+
+            btn.run(client, interaction);
         }
     }
 };

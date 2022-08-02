@@ -6,7 +6,7 @@ module.exports = {
     options: [
         {
             name: 'event',
-            description: 'Choisir un événement.',
+            description: 'Choose an event.',
             type: 3,
             required: true,
             choices: [

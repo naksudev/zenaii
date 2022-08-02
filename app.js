@@ -11,12 +11,12 @@ const client = new Client({
 	partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember, Partials.Reaction] 
 });
 const config = require('./config');
+
 client.config = config;
-
-// Commands & Events
 client.commands = new Collection();
+client.buttons = new Collection();
 
-['commands', 'events'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
+['commands', 'events', 'buttons'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
 
 process.on('unhandledRejection', (reason, p) => {
     console.log(reason, p);

@@ -1,7 +1,7 @@
 // Beautiful logging of slash commands.
 const chalk = require('chalk');
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord.js');
+// const { REST } = require('@discordjs/rest');
+// const { Routes } = require('discord.js');
 
 module.exports = {
     name: 'ready',
