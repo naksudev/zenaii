@@ -23,6 +23,6 @@ module.exports = {
                     )
             )
 
-        interaction.reply({ components: [event] })
+        interaction.reply({ components: [event], ephemeral: true })
     }
 };
