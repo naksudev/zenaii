@@ -1,7 +1,7 @@
-const { EmbedBuilder, Embed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-    name: "8ball",
+    name: '8ball',
     description: 'The magic 8ball crystal can respond to any questions..',
     ownerOnly: false,
 
@@ -10,12 +10,12 @@ module.exports = {
             name: 'question',
             description: 'Ask a question',
             type: 3,
-            required: true,
-        }
+            required: true
+        },
     ],
 
-    run: async (client, interaction) => {
-        const answers = require("../../assets/json/8ball_answers.json");
+    run: (client, interaction) => {
+        const answers = require('../../assets/json/8ball_answers.json');
 
         const eightballAnswers = [];
 
@@ -29,12 +29,12 @@ module.exports = {
             .setColor(Math.floor(Math.random() * 16777214) + 1)
             .setAuthor({ name:'8ball', iconURL: 'https://emojipedia-us.s3.amazonaws.com/source/skype/289/pool-8-ball_1f3b1.png' })
             .addFields([
-                { name: "Question", value: interaction.options.getString('question')},
-                { name: "Answer", value: eightballAnswers[eightballAnswersIndex] }
+                { name: 'Question', value: interaction.options.getString('question') },
+                { name: 'Answer', value: eightballAnswers[eightballAnswersIndex] },
             ])
             .setTimestamp()
-            .setFooter({ text: interaction.user.tag, iconURL: `${interaction.user.avatarURL()}` })
+            .setFooter({ text: interaction.user.tag, iconURL: `${interaction.user.avatarURL()}` });
 
         interaction.reply({ embeds: [embed] });
-    }
+    },
 };

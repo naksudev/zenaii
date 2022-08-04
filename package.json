@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/naksudev/zenaii/issues"
   },
-  "homepage": "https://github.com/naksudev/zenaii#readme"
+  "homepage": "https://github.com/naksudev/zenaii#readme",
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  }
 }

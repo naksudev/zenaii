@@ -1,41 +1,28 @@
+const { ActionRowBuilder, SelectMenuBuilder, ActionRow } = require('discord.js');
+
 module.exports = {
     name: "emit",
-    description: 'Emit a event.',
+    description: 'Emit an event.',
     ownerOnly: true,
 
-    options: [
-        {
-            name: 'event',
-            description: 'Choose an event.',
-            type: 3,
-            required: true,
-            choices: [
-                {
-                    name: 'guildMemberAdd',
-                    value: 'guildMemberAdd'
-                },
-                {
-                    name: 'guildMemberRemove',
-                    value: 'guildMemberRemove'
-                }
-            ]
-        }
-    ],
-
     run: async (client, interaction) => {
-        const evtChoices = interaction.options.getString('event');
+        const event = new ActionRowBuilder()
+            .addComponents(
+                new SelectMenuBuilder()
+                    .setCustomId('emit_event')
+                    .setPlaceholder('Select an event to emit')
+                    .addOptions(
+                        {
+                            label: 'Ready',
+                            value: 'ready'
+                        },
+                        {
+                            label: 'GuildMemberAdd',
+                            value: 'guildMemberAdd'
+                        }
+                    )
+            )
 
-        switch (evtChoices) {
-            case 'guildMemberAdd':
-                client.emit('guildMemberAdd', interaction.member);
-                interaction.reply({ content: "Event emitted, check the console.", ephemeral: true });
-                break;
-            case 'guildMemberRemove':
-                client.emit('guildMemberRemove', interaction.member);
-                interaction.reply({ content: "Event emitted, check the console.", ephemeral: true });
-                break;
-            default:
-                break;
-        }
+        interaction.reply({ components: [event] })
     }
 };

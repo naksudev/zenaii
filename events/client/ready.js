@@ -1,5 +1,6 @@
 // Beautiful logging of slash commands.
 const chalk = require('chalk');
+
 // const { REST } = require('@discordjs/rest');
 // const { Routes } = require('discord.js');
 

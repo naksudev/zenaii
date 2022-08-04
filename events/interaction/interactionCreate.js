@@ -2,7 +2,7 @@ module.exports = {
     name: 'interactionCreate',
     once: false,
 
-    async execute(client, interaction) {
+    execute(client, interaction) {
         if (interaction.isCommand() || interaction.isContextMenuCommand()) {
             const cmd = client.commands.get(interaction.commandName);
             
@@ -20,6 +20,14 @@ module.exports = {
             if (!btn) return client.buttons.delete(interaction.customId); 
 
             btn.run(client, interaction);
+        }
+
+        if (interaction.isSelectMenu()) {
+            const menu = client.menus.get(interaction.customId);
+
+            if (!menu) return client.menus.delete(interaction.customId); 
+
+            menu.run(client, interaction);
         }
     }
 };

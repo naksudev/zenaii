@@ -5,10 +5,10 @@ module.exports = {
     description: 'Rock, Paper, Scissors!',
     ownerOnly: false,
 
-    run: async (client, interaction) => {
+    run: (client, interaction) => {
         const embed = new EmbedBuilder()
             .setColor(Math.floor(Math.random() * 16777214) + 1)
-            .setTitle(`Rock, Paper, Scissors - Choose your weapon ⚔️`)
+            .setTitle('Rock, Paper, Scissors - Choose your weapon ⚔️')
             .setTimestamp()
             .setFooter(interaction.member.avatarURL());
 
