@@ -15,8 +15,9 @@ const config = require('./config');
 client.config = config;
 client.commands = new Collection();
 client.buttons = new Collection();
+client.menus = new Collection();
 
-['commands', 'events', 'buttons'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
+['commands', 'events', 'buttons', 'menus'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
 
 process.on('unhandledRejection', (reason, p) => {
     console.log(reason, p);
