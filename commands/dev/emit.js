@@ -1,4 +1,4 @@
-const { ActionRowBuilder, SelectMenuBuilder, ActionRow } = require('discord.js');
+const { ActionRowBuilder, SelectMenuBuilder } = require('discord.js');
 
 module.exports = {
     name: "emit",
@@ -21,8 +21,8 @@ module.exports = {
                             value: 'guildMemberAdd'
                         }
                     )
-            )
+            );
 
-        interaction.reply({ components: [event], ephemeral: true })
+        interaction.reply({ components: [event], ephemeral: true });
     }
 };

@@ -13,9 +13,14 @@ module.exports = {
 
         // Instant application of commands in the development guild
         const devGuild = await client.guilds.cache.get('633358979589865493');
-        devGuild.commands.set(client.commands.map(cmd => cmd));
 
-        // Global application of commands
-        // client.application.commands.set(client.commands.map(cmd => cmd));
+        if (client.user.id === "481790847193710603") 
+        {
+            devGuild.commands.set(client.commands.map(cmd => cmd));
+        } 
+        else if (client.user.id === "573868521117843476") 
+        {
+            client.application.commands.set(client.commands.map(cmd => cmd));
+        }
     }
 };

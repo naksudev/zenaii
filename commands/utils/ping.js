@@ -6,13 +6,13 @@ module.exports = {
     ownerOnly: false,
 
     run: async (client, interaction) => {
-        await interaction.reply('Pong!');
+        await interaction.reply({ content: 'Pong!' });
 
         const msg = await interaction.fetchReply();
         const embed = new EmbedBuilder()
             .setColor("#FFFFFF")
             .setDescription(`Time : ${msg.createdTimestamp - interaction.createdTimestamp}ms \nAPI Ping : ${client.ws.ping}ms`)
         
-        interaction.editReply({ embeds: [embed], content: '' })
+        interaction.editReply({ embeds: [embed], content: '' });
     }
 };

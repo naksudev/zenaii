@@ -8,7 +8,7 @@ module.exports = {
     options: [
         {
             name: 'question',
-            description: 'Ask a question',
+            description: 'Ask a question.',
             type: 3,
             required: true
         },
@@ -27,7 +27,7 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setColor(Math.floor(Math.random() * 16777214) + 1)
-            .setAuthor({ name:'8ball', iconURL: 'https://emojipedia-us.s3.amazonaws.com/source/skype/289/pool-8-ball_1f3b1.png' })
+            .setAuthor({ name: '8ball', iconURL: 'https://emojipedia-us.s3.amazonaws.com/source/skype/289/pool-8-ball_1f3b1.png' })
             .addFields([
                 { name: 'Question', value: interaction.options.getString('question') },
                 { name: 'Answer', value: eightballAnswers[eightballAnswersIndex] },
