@@ -15,23 +15,23 @@ module.exports = {
 			.setTimestamp()
 
 		switch (botOutcome) {
-		case '🧱':
-			embed.setTitle('You won.');
-			interaction.update({ embeds: [embed], components: [] });
-			break;
+			case '🧱':
+				embed.setTitle('You won.');
+				interaction.update({ embeds: [embed], components: [] });
+				break;
 
-		case '📰':
-			embed.setTitle('Draw!');
-			interaction.update({ embeds: [embed], components: [] });
-			break;
+			case '📰':
+				embed.setTitle('Draw!');
+				interaction.update({ embeds: [embed], components: [] });
+				break;
 
-		case '✂️':
-			embed.setTitle('You lose.');
-			interaction.update({ embeds: [embed], components: [] });
-			break;
+			case '✂️':
+				embed.setTitle('You lose.');
+				interaction.update({ embeds: [embed], components: [] });
+				break;
 
-		default:
-			break;
+			default:
+				break;
 		}
 	},
 };
