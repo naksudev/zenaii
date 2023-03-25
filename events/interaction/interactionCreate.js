@@ -22,7 +22,7 @@ module.exports = {
             btn.run(client, interaction);
         }
 
-        if (interaction.isSelectMenu()) {
+        if (interaction.isStringSelectMenu()) {
             const menu = client.menus.get(interaction.customId);
 
             if (!menu) return client.menus.delete(interaction.customId);
