@@ -19,7 +19,7 @@ module.exports = {
         if (gn_time === "23:00:00") {
             client.channels.fetch('1089243752448659457')
                 .then(channel => {
-                    channel.send({content : 'Bonne nuit Kavish!', files: [{ attachment: '/zenaii/assets/img/kavish/naruto.png', name: 'homie.png' }]});
+                    channel.send({content : 'Bonne nuit <@308327218197561344>!', files: [{ attachment: '/zenaii/assets/img/kavish/naruto.png', name: 'homie.png' }]});
                 })
         }
     }
