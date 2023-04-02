@@ -48,6 +48,7 @@ if (gn_time === "16:55:00") {
 		.then(channel => {
 			channel.send({content : 'mh.'});
 		})
+	console.log("test")
 }
 
 client.login(config.token);
