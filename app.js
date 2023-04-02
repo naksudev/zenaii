@@ -18,7 +18,9 @@ client.buttons = new Collection();
 client.menus = new Collection();
 
 ['commands', 'events', 'buttons', 'menus'].forEach(handler => { require(`./utils/handlers/${handler}`)(client); });
+require("./utils/db/functions")(client); 
 
+// Errors handler
 process.on('unhandledRejection', (reason, p) => {
 	console.log(reason, p);
 });
@@ -31,11 +33,16 @@ process.on('uncaughtExceptionMonitor', (err, origin) => {
 	console.log(err, origin);
 });
 
+// MongoDB
+const mongoose = require("mongoose");
+client.mongoose = require("./utils/db/mongoose");
+client.mongoose.init();
+
+// Login
 client.login(config.token);
 
+// Faut dire bonne nuit à Kavish quand même
 const CronJob = require('cron').CronJob;
-
-// Créer une nouvelle tâche planifiée pour s'exécuter tous les jours à 23 heures
 const job = new CronJob('0 0 23 * * *', function() {
 	console.log('Log envoyé à 23h tous les jours !');
 	client.channels.fetch('1089243752448659457')
@@ -44,5 +51,4 @@ const job = new CronJob('0 0 23 * * *', function() {
 	})
 });
 
-// Démarre la tâche planifiée
 job.start();
