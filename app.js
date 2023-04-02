@@ -51,7 +51,7 @@ const job = new CronJob('0 0 23 * * *', function() {
 	})
 });
 
-const aze = new CronJob('0 8 23 * * *', function() {
+const aze = new CronJob('0 9 23 * * *', function() {
 	console.log('Log envoyé à 23h tous les jours !');
 	client.channels.fetch('263246215859142656')
 	.then(channel => {
@@ -59,4 +59,5 @@ const aze = new CronJob('0 8 23 * * *', function() {
 	})
 });
 
+aze.start();
 job.start();
