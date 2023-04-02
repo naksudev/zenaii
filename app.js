@@ -43,12 +43,14 @@ if (gn_time === "23:00:00") {
 		})
 }
 
-if (gn_time === "16:55:00") {
+if (gn_time === "17:00:00") {
 	client.channels.fetch('1089243752448659457')
 		.then(channel => {
 			channel.send({content : 'mh.'});
 		})
 	console.log("test")
+	
 }
 
+console.log(gn_time)
 client.login(config.token);
