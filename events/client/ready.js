@@ -1,7 +1,6 @@
 // Beautiful logging of slash commands.
 const chalk = require('chalk');
 
-
 module.exports = {
     name: 'ready',
     once: true,
