@@ -44,7 +44,10 @@ client.login(config.token);
 // Faut dire bonne nuit à Kavish quand même
 const CronJob = require('cron').CronJob;
 const job = new CronJob('0 0 23 * * *', function() {
-	client.users.cache.get('308327218197561344').send({content : 'Bonne nuit <@308327218197561344>!', files: [{ attachment: '/zenaii/assets/img/kavish/naruto.png', name: 'homie.png' }]})
+	client.users.cache.get('308327218197561344').send({
+			content : 'Bonne nuit <@308327218197561344>!', 
+			files: [{ attachment: '/zenaii/assets/img/kavish/naruto.png', name: 'homie.png' }]
+		});
 });
 
 job.start();
