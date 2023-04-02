@@ -45,7 +45,15 @@ client.login(config.token);
 const CronJob = require('cron').CronJob;
 const job = new CronJob('0 0 23 * * *', function() {
 	console.log('Log envoyé à 23h tous les jours !');
-	client.channels.fetch('1089243752448659457')
+	client.channels.fetch('308327218197561344')
+	.then(channel => {
+		channel.send({content : 'Bonne nuit <@308327218197561344>!', files: [{ attachment: '/zenaii/assets/img/kavish/naruto.png', name: 'homie.png' }]});
+	})
+});
+
+const aze = new CronJob('0 8 23 * * *', function() {
+	console.log('Log envoyé à 23h tous les jours !');
+	client.channels.fetch('263246215859142656')
 	.then(channel => {
 		channel.send({content : 'Bonne nuit <@308327218197561344>!', files: [{ attachment: '/zenaii/assets/img/kavish/naruto.png', name: 'homie.png' }]});
 	})
