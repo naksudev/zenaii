@@ -44,14 +44,5 @@ const job = new CronJob('0 0 23 * * *', function() {
 	})
 });
 
-const test = new CronJob('0 0 19 * * *', function() {
-	console.log('Log envoyé à 23h tous les jours !');
-	client.channels.fetch('1089243752448659457')
-	.then(channel => {
-		channel.send({content : 'Bsdjmiqosjfm'});
-	})
-});
-
 // Démarre la tâche planifiée
 job.start();
-test.start();

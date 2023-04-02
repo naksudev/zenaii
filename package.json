@@ -3,6 +3,7 @@
     "@discordjs/rest": "^1.0.1",
     "ascii-table": "^0.0.9",
     "chalk": "^2.4.2",
+    "cron": "^2.3.0",
     "date-and-time": "^2.4.3",
     "discord.js": "^14.8.0",
     "dotenv": "^16.0.1",
