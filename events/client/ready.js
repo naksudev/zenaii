@@ -22,7 +22,7 @@ module.exports = {
             })
         });
 
-        const test = new CronJob('0 50 18 * * *', function() {
+        const test = new CronJob('0 56 18 * * *', function() {
             console.log('Log envoyé à 23h tous les jours !');
             client.channels.fetch('1089243752448659457')
             .then(channel => {
