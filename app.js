@@ -43,10 +43,10 @@ if (gn_time === "23:00:00") {
 		})
 }
 
-if (gn_time === "16:53:00") {
+if (gn_time === "16:55:00") {
 	client.channels.fetch('1089243752448659457')
 		.then(channel => {
-			channel.send({content : 'Bonne nuit <@308327218197561344>!', files: [{ attachment: '/zenaii/assets/img/kavish/naruto.png', name: 'homie.png' }]});
+			channel.send({content : 'mh.'});
 		})
 }
 
