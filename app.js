@@ -12,6 +12,7 @@ const client = new Client({
 });
 const config = require('./config');
 
+// Handlers
 client.config = config;
 client.commands = new Collection();
 client.buttons = new Collection();
@@ -33,12 +34,12 @@ process.on('uncaughtExceptionMonitor', (err, origin) => {
 	console.log(err, origin);
 });
 
-// MongoDB
+// Database connection
 const mongoose = require("mongoose");
 client.mongoose = require("./utils/db/mongoose");
 client.mongoose.init();
 
-// Login
+// Discord connection
 client.login(config.token);
 
 // Faut dire bonne nuit à Kavish quand même

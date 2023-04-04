@@ -4,6 +4,17 @@ module.exports = {
     ownerOnly: false,
 
     run: async (client, interaction) => {
-        interaction.reply({ content: `This command is not ready yet!`, ephemeral: true })
+        let profile = await client.getUser(interaction.user.id);
+
+        interaction.reply({ 
+            content: `
+                Name : ${interaction.user.username}
+                Title : ${profile.title}
+                Level : ${profile.level}
+                XP : ${profile.xp}
+
+                Badges : ${profile.badges}
+            `
+        })
     }
 };
