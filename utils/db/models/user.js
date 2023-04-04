@@ -1,25 +1,33 @@
 const mongoose = require("mongoose");
-const CONFIG = require("../../../config");
+const config = require("../../../config");
 
 const userSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     userID: String,
-    userName: String,
     level: {
         "type": Number,
-        "default": CONFIG.DEFAULT_PROFILE.level
+        "default": config.DEFAULT_PROFILE.level
     },
     xp: {
         "type": Number,
-        "default": CONFIG.DEFAULT_PROFILE.xp
+        "default": config.DEFAULT_PROFILE.xp
+    },
+    xp_max: {
+        "type": Number,
+        "default": config.DEFAULT_PROFILE.xpmax 
+    },
+    stats: {
+        hp: Number,
+        atk: Number,
+        def: Number
     },
     title: {
         "type": String,
-        "default": CONFIG.DEFAULT_PROFILE.title
+        "default": config.DEFAULT_PROFILE.title
     },
     badges: {
         "type": Array,
-        "default": CONFIG.DEFAULT_PROFILE.badges
+        "default": config.DEFAULT_PROFILE.badges
     }
 })
 
