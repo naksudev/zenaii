@@ -8,7 +8,8 @@ module.exports = {
 	DEFAULT_PROFILE: {
 		level: 0,
 		xp: 0,
+		xpmax: 0,
 		title: 'Newborn',
-		badges: []
+		badges: ['']
 	}
 }

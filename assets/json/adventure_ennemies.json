@@ -1,0 +1,10 @@
+{
+    "spectrum_of_light":
+        {
+            "name": "Spectrum of Light",
+            "pv": "80",
+            "atk": "4",
+            "xp_min": "10",
+            "xp_max": "10"
+        }
+}

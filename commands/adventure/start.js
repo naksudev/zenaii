@@ -4,21 +4,15 @@ module.exports = {
     ownerOnly: false,
 
     run: async (client, interaction) => {
+        let profile_exists = await client.getUser(interaction.user);
 
-        
-        // !! Check si il y a déjà l'utilisateur d'enregistré dans la DB !!
-
-    
-        try {
-            const settings = {
-                userID: `${interaction.user.id}`,
-                userName: `${interaction.user.username}`
-            };
+        if (!profile_exists) {
+            const settings = { userID: `${interaction.user.id}` };
+            
             await client.createUser(settings);
-        } catch (e) {
-            console.error(e)
+            return interaction.reply({ content: `Your profile has been created. Welcome ${interaction.user.username}. \nTo start your adventure, do \`/quest\``, ephemeral: true });
+        } else {
+            return interaction.reply({ content: 'You already started your adventure ! Do \`/profile\` to see your progress.', ephemeral: true });
         }
-
-        interaction.reply({ content: `Done.`, ephemeral: true });
     }
 };
