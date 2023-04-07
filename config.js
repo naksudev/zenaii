@@ -10,6 +10,6 @@ module.exports = {
 		xp: 0,
 		xpmax: 0,
 		title: 'Newborn',
-		badges: ['']
+		badges: ['Newborn']
 	}
 }
