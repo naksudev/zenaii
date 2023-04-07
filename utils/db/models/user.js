@@ -16,11 +16,6 @@ const userSchema = mongoose.Schema({
         "type": Number,
         "default": config.DEFAULT_PROFILE.xpmax 
     },
-    stats: {
-        hp: Number,
-        atk: Number,
-        def: Number
-    },
     title: {
         "type": String,
         "default": config.DEFAULT_PROFILE.title
