@@ -6,7 +6,7 @@ module.exports = {
         if (message.channel.type === 1) {
             let getMessage = message.content.toLowerCase();
             getMessage = getMessage.toLowerCase();
-            if (getMessage.includes("bonne nuit")) return message.reply('Merciiii 💕💞💅');
+            if (getMessage.includes("bonne nuit") && message.author.id !== client.config.clientID) return message.reply('Merciiii bonne nuit 💕💞💅');
         }
     }
 };
